@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
 import "./Navbar.css";
 
@@ -36,12 +38,12 @@ export const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a hre className="nav-link" href="/">
+              <a className="nav-link" href="/">
                 GALLERY
               </a>
             </li>
             <li className="nav-item">
-              <a hre className="nav-link" href="/">
+              <a className="nav-link" href="/">
                 FACULTY
               </a>
             </li>
