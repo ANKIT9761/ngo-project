@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  TextInput,
-  Checkbox,
-  Button,
-  Group,
-  Box,
-  Textarea,
-} from "@mantine/core";
+import { Textarea } from "@mantine/core";
 const MailForm = () => {
   const [submit, setSubmit] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,14 +24,17 @@ const MailForm = () => {
 
     let url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSejEzAdpCGzmTYSq2LQTZbCpq8A4GcVUDpo0iAq9_7Ex2JMbA/formResponse?entry.1759328524=${formData["entry.1759328524"]}&entry.60803183=${formData["entry.60803183"]}&entry.220097671=${formData["entry.220097671"]}&entry.857691959=${formData["entry.857691959"]}`;
 
-    const res = await fetch(url, {
+    await fetch(url, {
       method: "POST",
       mode: "no-cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-    });
+    })
+      .then((res) => console.log(res.json()))
+      .catch((error) => console.log(error));
   }
+
   return (
     <div className="  m-auto mt-11 w-96 pr-2 pt-2">
       {submit ? (
